@@ -1,9 +1,9 @@
-use crate::task::Task;
 use crate::storage;
+use crate::task::Task;
 
 pub fn handle_command(cmd: &str, tasks: &mut Vec<Task>, id: &mut u32) -> bool {
     let parts: Vec<&str> = cmd.trim().splitn(2, ' ').collect();
-    
+
     match parts[0] {
         "add" => {
             if parts.len() > 1 {
@@ -47,6 +47,6 @@ pub fn handle_command(cmd: &str, tasks: &mut Vec<Task>, id: &mut u32) -> bool {
         "" => {}
         _ => println!("Invalid command {}", parts[0]),
     }
-    
+
     return true;
 }

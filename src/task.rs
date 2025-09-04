@@ -2,7 +2,7 @@
 pub struct Task {
     pub id: u32,
     pub title: String,
-    pub completed: bool
+    pub completed: bool,
 }
 
 impl Task {
@@ -10,11 +10,14 @@ impl Task {
         Task {
             id,
             title,
-            completed: false
+            completed: false,
         }
     }
-    
+
     pub fn display(&self) {
-        println!("id: {}, title: {}, completed: {}", self.id, self.title, self.completed)
+        println!(
+            "id: {}, title: {}, completed: {}",
+            self.id, self.title, self.completed
+        )
     }
 }
